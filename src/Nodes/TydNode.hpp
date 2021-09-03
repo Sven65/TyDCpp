@@ -27,7 +27,7 @@ namespace Tyd {
 					this->docLine = docLine;
 				};
 
-				virtual TydNode *DeepClone();
+				virtual TydNode *DeepClone() { return NULL; };
 		} TydNode;
 	};
 };

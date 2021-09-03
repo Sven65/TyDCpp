@@ -12,9 +12,9 @@ namespace Tyd {
 					  TydNode& operator[](std::string name)       { return std::find_if(nodes.begin(), nodes.end(), [&](const TydNode &node) { return node.name == name; }); };
     			const TydNode& operator[](std::string name) const { return std::find_if(nodes.begin(), nodes.end(), [&](const TydNode &node) { return node.name == name; }); };
 
-				TydTable(std::string name, Tyd::Nodes::TydNode *parent, int docLine = -1) : Tyd::Nodes::TydNode(name, parent, docLine) {};
+				TydTable(std::string name, Tyd::Nodes::TydNode *parent, int docLine = -1) : Tyd::Nodes::TydCollection(name, parent, docLine) {};
 				
-				TydNode *DeepClone() {
+				Tyd::Nodes::TydNode* DeepClone() {
 					TydTable *c = new TydTable(name, parent, docLine);
 					CopyDataFrom(c);
 					return c;

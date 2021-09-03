@@ -11,7 +11,7 @@ namespace Tyd {
 			public:
 				TydList(std::string name, Tyd::Nodes::TydNode *parent, int docLine = -1) : Tyd::Nodes::TydCollection(name, parent, docLine) {};
 
-				TydNode *DeepClone() {
+				Tyd::Nodes::TydNode* DeepClone() {
 					TydList *c = new TydList(name, parent, docLine);
 					CopyDataFrom(c);
 					return c;

@@ -15,7 +15,7 @@ namespace Tyd {
 					this->val = val;
 				};
 				
-				TydNode* DeepClone() {
+				Tyd::Nodes::TydNode* DeepClone() {
 					TydString *c = new TydString(name, val, parent, docLine);
 					c->docIndexEnd = docIndexEnd;
 					return c;

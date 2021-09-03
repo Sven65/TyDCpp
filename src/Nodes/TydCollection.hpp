@@ -9,7 +9,6 @@ namespace Tyd {
 	namespace Nodes {
 		typedef struct TydCollection : public Tyd::Nodes::TydNode {
 			protected:
-				std::vector<Tyd::Nodes::TydNode> nodes;
 				std::string attHandle;
 				std::string attSource;
 				std::string attAbstract;
@@ -27,6 +26,8 @@ namespace Tyd {
 					}
 				};
 			public:
+				std::vector<Tyd::Nodes::TydNode> nodes;
+
 				TydCollection(std::string name, Tyd::Nodes::TydNode *parent, int docLine = -1) : Tyd::Nodes::TydNode(name, parent, docLine) {};
 				void SetupAttributes(std::string attHandle, std::string attSource, bool attAbstract, bool attNoInherit) {
 					this->attHandle = attHandle;
