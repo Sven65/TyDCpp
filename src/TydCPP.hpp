@@ -1,21 +1,30 @@
 #ifndef H_TYD_CPP
 #define H_TYD_CPP
 
-namespace TydCPP {
-	class Arithmetic {
-		public:
-			// Returns a + b
-			static double Add(double a, double b);
+#include <string>
+#include <iostream>
+#include "Nodes/TydNode.hpp"
 
-			// Returns a - b
-			static double Subtract(double a, double b);
-
-			// Returns a * b
-			static double Multiply(double a, double b);
-
-			// Returns a / b
-			static double Divide(double a, double b);
+namespace Tyd {
+	enum SymbolType {
+		RecordName,
+		AttributeName,
+		AttributeValue
 	};
+
+	enum StringFormat {
+		Naked,
+		Quoted,
+		Vertical
+	};
+
+	static void Parse(std::string text) {
+		std::cout << "Parse " << text << std::endl;
+	}
+
+	static void Parse(std::string text, int startIndex, Tyd::Nodes::TydNode parent, bool expectNames = true) {
+		std::cout << "Parse " << text << std::endl;
+	}
 }
 
 #endif
