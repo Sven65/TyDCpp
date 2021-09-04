@@ -3,31 +3,12 @@
 
 #include <string>
 #include <iostream>
-#include "Nodes/TydNode.hpp"
-#include "Nodes/TydCollection.hpp"
+#include <vector>
+#include "TydParser.hpp"
 
 namespace Tyd {
-	enum SymbolType {
-		RecordName,
-		AttributeName,
-		AttributeValue
-	};
-
-	enum StringFormat {
-		Naked,
-		Quoted,
-		Vertical
-	};
-
-	static void Parse(std::string text) {
-		std::cout << "Parse " << text << std::endl;
-		Tyd::Nodes::TydCollection *collection = new Tyd::Nodes::TydCollection("Name", NULL);
-
-		std::cout << collection->nodes.size() << std::endl;
-	}
-
-	static void Parse(std::string text, int startIndex, Tyd::Nodes::TydNode parent, bool expectNames = true) {
-		std::cout << "Parse " << text << std::endl;
+	static std::vector<Tyd::Nodes::TydNode*> Parse(std::string text) {
+		return Tyd::Parser::parse(text);
 	}
 }
 

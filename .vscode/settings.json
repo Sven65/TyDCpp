@@ -35,6 +35,7 @@
 		"vector": "cpp",
 		"functional": "cpp",
 		"tuple": "cpp",
-		"utility": "cpp"
+		"utility": "cpp",
+		"iterator": "cpp"
 	}
 }

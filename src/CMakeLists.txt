@@ -1,6 +1,8 @@
 include_directories(Nodes)
 add_library (TyDCPP
 	TydCPP.cpp TydCPP.hpp
+	TydParser.hpp
+	TydConstants.hpp
 	Nodes/TydNode.hpp
 	Nodes/TydCollection.hpp
 	Nodes/TydDocument.hpp
